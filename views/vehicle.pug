@@ -6,9 +6,13 @@ block content
 
   .container-fluid
     .row
-      each vehicle in results
-        .col-sm-2
+      each vehicle,index in results
+        div(class="col-sm-2" onclick=`buy(${index})`)
           h3 #{vehicle.Brand}
           p Color: #{vehicle.Color}
           p Year: #{vehicle.Year}
+  script.
+    function buy(index) {
+        alert(`You purchased : ${index}`)
+    }        
   
